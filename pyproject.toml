@@ -7,7 +7,9 @@ authors = [
     { name = "dfleetwood", email = "darrenfleetwood@gmail.com" }
 ]
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "scikit-learn>=1.6.1",
+]
 
 
 # Register all routines as entry points
