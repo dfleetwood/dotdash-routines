@@ -16,7 +16,7 @@ linear_regression = "dotdash_routines.linear_regression:linear_regression"
 
 
 [tool.dotdash.plugin]
-install_location = "dotdash-routines"
+install_location = "https://github.com/dfleetwood/dotdash-routines.git"
 
 
 [build-system]
