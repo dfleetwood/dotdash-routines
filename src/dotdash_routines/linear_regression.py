@@ -55,16 +55,8 @@ def linear_regression(
     # Load the dataset using the helper
     df = load_dataset(data).to_pandas()
     
-    # Use the requested columns if they exist, otherwise default to height/weight
-    if x_column in df.columns and y_column in df.columns:
-        X = df[x_column].values.reshape(-1, 1)
-        y = df[y_column].values
-    else:
-        # Fall back to default columns
-        X = df["height"].values.reshape(-1, 1)
-        y = df["weight"].values
-        x_column = "height"
-        y_column = "weight"
+    X = df[x_column].values
+    y = df[y_column].values
     
     # Fit the linear regression model
     model = LinearRegression()
