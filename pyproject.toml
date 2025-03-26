@@ -1,0 +1,24 @@
+[project]
+name = "dotdash-routines"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "dfleetwood", email = "darrenfleetwood@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = []
+
+
+# Register all routines as entry points
+[project.entry-points."dotdash.plugins"]
+linear_regression = "dotdash_routines.linear_regression:linear_regression"
+
+
+[tool.dotdash.plugin]
+install_location = "dotdash-routines"
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
