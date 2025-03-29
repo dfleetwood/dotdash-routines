@@ -16,9 +16,9 @@ from dotdash.utils.dataset_helpers import load_dataset
 
 
 class RegressionParameters(BaseModel):
-    data: DatasetReference,
-    x_column: List[Union[NumericField, CategoricalField, BooleanField]],
-    y_column: NumericField,
+    data: DatasetReference
+    x_column: List[Union[NumericField, CategoricalField, BooleanField]]
+    y_column: NumericField
     predict_new_values: bool = True
 
 
