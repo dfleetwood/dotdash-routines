@@ -9,10 +9,17 @@ from typing import List, Optional, Dict, Any, Union
 from dotdash.decorators import routine
 from dotdash.models.routine_types import (
     DatasetOutput, Metric, Visualization, 
-    NumericField, TextField, BooleanField, Result, DatasetReference
+    NumericField, TextField, BooleanField, Result, DatasetReference, BaseModel
 )
 from dotdash.models.routine_types import NumericField, CategoricalField, BooleanField
 from dotdash.utils.dataset_helpers import load_dataset
+
+
+class RegressionParameters(BaseModel):
+    data: DatasetReference,
+    x_column: List[Union[NumericField, CategoricalField, BooleanField]],
+    y_column: NumericField,
+    predict_new_values: bool = True
 
 
 class RegressionResult(Result):
@@ -27,12 +34,7 @@ class RegressionResult(Result):
     path = 'Regression/Linear',
     version="0.1.0"
 )
-def linear_regression(
-    data: DatasetReference,
-    x_column: List[Union[NumericField, CategoricalField, BooleanField]],
-    y_column: NumericField,
-    predict_new_values: bool = True
-) -> RegressionResult:
+def linear_regression(RegressionParameters) -> RegressionResult:
     """
     Fit a linear regression model to the specified columns.
     
